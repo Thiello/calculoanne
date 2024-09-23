@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dubai&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Quinzenas com Cotação do Dólar e Saque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título Centralizado -->
+    <h1 class="titulo">Cálculo Anne Richards</h1>
+
+    <!-- Container Centralizado -->
+    <div class="container">
+        <form id="quinzenaForm">
+            <label for="quinzenas">Quantidade de Quinzenas:</label>
+            <input type="number" id="quinzenas" min="1" required><br>
+
+            <label for="percentual">Percentual (%):</label>
+            <input type="number" id="percentual" min="0" required><br>
+
+            <label for="valorBase">Valor Base (em dólares):</label>
+            <input type="number" id="valorBase" min="0" required><br>
+
+            <label for="saque">Valor do Saque por Quinzena (opcional):</label>
+            <input type="number" id="saque" min="0"><br>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

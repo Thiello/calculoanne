@@ -1,0 +1,91 @@
+/* Resetando margens e espaçamentos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página com imagem de fundo */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    flex-direction: column;   /* Alinha o título e o container verticalmente */
+    font-family: 'Dubai', sans-serif; /* Define Dubai como fonte principal */
+    background-image: url('src/5b65a951f8ec91380406f253159ff065.jpg'); /* Substitua 'sua-imagem.jpg' pelo nome correto da sua imagem */
+    background-size: cover;   /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
+/* Estilo para o título */
+.titulo {
+    font-size: 24px;  /* Tamanho da fonte */
+    color: #515151;   /* Cor do texto */
+    text-align: center;  /* Centraliza o título */
+    margin-bottom: 0;   /* Remove o espaço inferior para colar no container */
+    padding: 0;         /* Remove qualquer padding extra */
+    margin-top: 10px;   /* Pequeno espaçamento superior, ajuste conforme necessário */
+}
+
+/* Estilo para o container */
+.container {
+    padding: 20px;
+    margin-top: 0;      /* Remove qualquer margem superior */
+}
+
+/* Estilo para o Formulário */
+form {
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco com 50% de opacidade */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilo para os Labels e Inputs */
+label {
+    display: block;
+    margin-bottom: 1px; /* Reduz a margem inferior do rótulo */
+}
+
+input {
+    display: block;
+    margin-bottom: 2px; /* Mantém a margem inferior da caixa de entrada */
+    width: 100%;
+    padding: 3px; /* Adiciona um pouco de padding para as caixas de entrada */
+}
+
+
+/* Estilo para o Botão */
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #1b4df0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d01b3;
+}
+
+/* Media Query para telas pequenas, como celulares */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+    }
+
+    label, input {
+        font-size: 14px;
+    }
+}

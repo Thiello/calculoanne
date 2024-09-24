@@ -13,38 +13,38 @@ async function getCotacaoDolar() {
 document.getElementById('quinzenaForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
+    // Captura dos valores inseridos no formulário
     let quinzenas = parseInt(document.getElementById('quinzenas').value);
     let percentual = parseFloat(document.getElementById('percentual').value) / 100;
     let valorBase = parseFloat(document.getElementById('valorBase').value);
-    let saque = parseFloat(document.getElementById('saque').value) || 0; // Valor do saque, opcional
 
-    // Obter a cotação atual do dólar
+    // Obter a cotação do dólar
     let cotacaoDolar = await getCotacaoDolar();
 
+    // Verificação da cotação
     if (!cotacaoDolar) {
         document.getElementById('resultado').innerHTML = 'Erro ao obter a cotação do dólar. Tente novamente.';
         return;
     }
 
-    let resultadoEmDolares = valorBase;
-    
-    // Calcula o valor com o percentual para cada quinzena e subtrai o saque (se houver)
-    for (let i = 0; i < quinzenas; i++) {
-        resultadoEmDolares += resultadoEmDolares * percentual;
-        if (saque > 0) {
-            resultadoEmDolares -= saque;
-        }
-        // Garante que o valor não seja negativo após subtrair o saque
-        if (resultadoEmDolares < 0) {
-            resultadoEmDolares = 0;
-            break;
-        }
+    // Verificação básica dos inputs
+    if (isNaN(quinzenas) || isNaN(percentual) || isNaN(valorBase)) {
+        document.getElementById('resultado').innerHTML = 'Preencha todos os campos corretamente.';
+        return;
     }
 
-    // Converter o resultado final de dólares para reais
+    // Inicializa o cálculo com o valor base
+    let resultadoEmDolares = valorBase;
+    
+    // Calcula o valor com o percentual para cada quinzena
+    for (let i = 0; i < quinzenas; i++) {
+        resultadoEmDolares += resultadoEmDolares * percentual;
+    }
+
+    // Converte o resultado final de dólares para reais
     let resultadoEmReais = resultadoEmDolares * cotacaoDolar;
 
-    // Exibir os valores em dólares e reais
+    // Exibe os valores em dólares e reais
     document.getElementById('resultado').innerHTML = `
         Resultado Final em Dólares: $${resultadoEmDolares.toFixed(2)}<br>
         Resultado Final em Reais: R$${resultadoEmReais.toFixed(2)} (Cotação: R$${cotacaoDolar.toFixed(2)})

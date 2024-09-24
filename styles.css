@@ -32,38 +32,34 @@ body, html {
 /* Estilo para o container */
 .container {
     padding: 30px;
-    margin-top: 0;        /* Remove qualquer margem superior */
+    margin-top: 0;        
     width: 100%;
-    max-width: 500px;      /* Aumenta a largura máxima do container */
-    height: 500px;         /* Define uma altura fixa */
-    min-height: 500px;     /* Altura mínima para garantir tamanho maior */
+    max-width: 700px;    /* Aumenta a largura máxima do container */
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-
 
 /* Estilo para o Formulário */
 form {
-    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco com 50% de opacidade */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 400px;
+    width: 100%;  /* Faz o formulário ocupar toda a largura do container */
 }
 
 /* Estilo para os Labels e Inputs */
 label {
     display: block;
-    margin-bottom: 1px; /* Reduz a margem inferior do rótulo */
+    margin-bottom: 1px;
 }
 
 input {
     display: block;
-    margin-bottom: 2px; /* Mantém a margem inferior da caixa de entrada */
-    width: 100%;
-    padding: 3px; /* Adiciona um pouco de padding para as caixas de entrada */
+    margin-bottom: 10px;
+    width: 100%;  /* Aumenta a largura dos inputs para 100% do formulário */
+    padding: 8px;  /* Adiciona mais espaço interno nas caixas de texto */
+    box-sizing: border-box;  /* Garante que o padding não ultrapasse a largura */
 }
-
 
 /* Estilo para o Botão */
 button {
